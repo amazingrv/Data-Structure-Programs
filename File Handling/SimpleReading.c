@@ -29,11 +29,10 @@ int main()
 	printf("\nEnter a filename to open: ");
 	gets(filename);
 	
-	if ((infile = fopen (filename, "r")) == NULL)
-    {
-    	printf("\nCannot open file for reading..\n");
+	if ((infile = fopen (filename, "r")) == NULL) {
+		printf("\nCannot open file for reading..\n");
 		return 1;
-    }
+	}
 	
 	fseek(infile,0,SEEK_END);
 	pos = ftell(infile);
@@ -43,11 +42,10 @@ int main()
 	
 	rewind(infile);
 	printf("\nReading data now..\n");
-	while (!feof(infile) && fscanf (infile, "%d", &value) && i < size )
-    {
-    	data[i] = value;
-    	i++;
-    }
+	while (!feof(infile) && fscanf (infile, "%d", &value) && i < size ) {
+		data[i] = value;
+		i++;
+	}
 	fclose(infile);
 	
 	printf("\nSorting started..\n");
@@ -66,9 +64,9 @@ int main()
 	printf("\nReading data now..\n");
 	i=0;
 	while (!feof(outfile) && fscanf (outfile, "%d", &value) && i < size ) {
-    	printf("%d\n",value);
-    	i++;
-    }
+		printf("%d\n",value);
+		i++;
+	}
 	fclose(outfile);
 	
 	printf("\nProcessing Complete.\n");
